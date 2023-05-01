@@ -17,7 +17,7 @@ public class MoveController : MonoBehaviour
 
     [SerializeField] private float _speed = 3f;
 
-    [SerializeField] private List<Engine> _allEnginesGroup;
+    
     [SerializeField] private List<GameObject> _allEngines;
 
 
@@ -199,30 +199,6 @@ public class MoveController : MonoBehaviour
         return inputRotations;
     }
 
-
-
-
-
-    private List<Engine> GetCorrestEngineList(List<GameObject> engineToList)
-    {
-        List<Engine> list = new List<Engine>();
-        foreach (var item in engineToList)
-        {
-            list.Add(new Engine { engin = item, active = false });
-        }
-
-        _allEnginesGroup.AddRange(list);
-        return list;
-    }
-
-
-    [Serializable]
-    private class Engine
-    {
-        public GameObject engin;
-        public bool active = true;
-
-    }
 
 
 }
