@@ -55,7 +55,7 @@ public class MoveController : MonoBehaviour
     [SerializeField] private List<GameObject> _RollContClockEngines;
     [SerializeField] private List<GameObject> _RollClokUpEngines;
 
-   
+
     #endregion
 
 
@@ -76,7 +76,7 @@ public class MoveController : MonoBehaviour
         _allEngines = _allEngines.Concat(_GoFrontEngine).Concat(_GoBackEngines).Concat(_GoUpEngines).Concat(_GoDownEngines).Concat(_GoLeftEngines).Concat(_GoRightEngines).ToList();
         _allEngines = _allEngines.Concat(_RollRightEngines).Concat(_RollLeftEngines).Concat(_RollUpEngines).Concat(_RollDownEngines).Concat(_RollClokUpEngines).Concat(_RollContClockEngines).ToList();
         _allEngines = _allEngines.Distinct().ToList();
-                
+
         #endregion
     }
 
@@ -99,10 +99,10 @@ public class MoveController : MonoBehaviour
         roll = GetRotationSpeedModfied(roll);
         _rb.AddRelativeTorque(roll * _speed, ForceMode.Force);
 
-        IgniteEngines(roll, direcion);
+        IgniteEngines(direcion,  roll);
     }
 
-    private void IgniteEngines(Vector3 roll, Vector3 direcion)
+    private void IgniteEngines(Vector3 direcion, Vector3 roll)
     {
         List<GameObject> engines = new List<GameObject>();
         if (direcion.z > 0)
@@ -132,9 +132,34 @@ public class MoveController : MonoBehaviour
             engines.AddRange(_GoDownEngines);
         }
 
+        if (roll.x > 0)
+        {
+            engines.AddRange(_RollUpEngines);
+        }
+        else if (roll.x < 0)
+        {
+            engines.AddRange(_RollDownEngines);
+        }
+        if (roll.y > 0)
+        {
+            engines.AddRange(_RollRightEngines);
+        }
+        else if (roll.y < 0)
+        {
+            engines.AddRange(_RollLeftEngines);
+        }
+        if (roll.z > 0)
+        {
+            engines.AddRange(_RollContClockEngines);
+        }
+        else if (roll.z < 0)
+        {
+            engines.AddRange(_RollClokUpEngines);
+        }
+
 
         List<GameObject> enginess = new List<GameObject>(_allEngines);
-        
+
         enginess.RemoveAll(x => engines.Contains(x));
 
         foreach (var item in engines)
