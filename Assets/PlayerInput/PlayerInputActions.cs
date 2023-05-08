@@ -24,22 +24,13 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""name"": ""ShipController"",
             ""id"": ""35e06ca2-7c8d-450d-9238-a1253ab72706"",
             ""actions"": [
                 {
-                    ""name"": ""Shot"",
-                    ""type"": ""Button"",
-                    ""id"": ""bda5e726-5466-4f1a-8986-264e08a602fa"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Movment"",
                     ""type"": ""Value"",
-                    ""id"": ""16de2f38-1ace-40f5-945a-be7cbccf638d"",
+                    ""id"": ""782a1319-d98c-4dc9-b436-16b8ddc25574"",
                     ""expectedControlType"": ""Vector3"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -48,28 +39,26 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Rotation"",
                     ""type"": ""Value"",
-                    ""id"": ""ec4b6eaf-8e69-41f2-9103-5914b65dc2a3"",
+                    ""id"": ""145d5b26-585b-4547-8af4-ad37a4402bf9"",
                     ""expectedControlType"": ""Vector3"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ThrustStop"",
+                    ""type"": ""Button"",
+                    ""id"": ""7c2a2fea-b5d5-4da1-8bff-fdc377dcecff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""4e173a3c-00d0-43a4-9936-6177f9d19e76"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Shot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""3D Vector"",
-                    ""id"": ""c6a2b568-05c1-49d6-9b13-7abf94e839dc"",
+                    ""name"": ""MovmentKB"",
+                    ""id"": ""47adb98b-c68b-4e3f-a061-c4250e73abfb"",
                     ""path"": ""3DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -80,7 +69,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""01135351-4967-4f59-8c7c-9a79b42cd294"",
+                    ""id"": ""e456d810-fb21-4dbd-8168-0a705cb8fbd2"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -91,7 +80,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""130607d5-aa7e-4a0e-abc3-50bd911f6f9a"",
+                    ""id"": ""bb7956b7-1b1c-4de2-962d-5df69cd29405"",
                     ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -102,8 +91,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""df817156-51be-4dd3-9bf7-eb800967a4c4"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""id"": ""4afec19f-0100-4dba-aa80-2b68dc6f99fa"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
@@ -113,8 +102,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""f2eec6b9-0e42-4b34-9195-90f466344d82"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""id"": ""664cd501-b321-4e85-842c-623f4034751c"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
@@ -124,7 +113,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""forward"",
-                    ""id"": ""b467aeaf-75ae-46e0-bc11-2a5622672a9f"",
+                    ""id"": ""bf95d363-b13e-487d-9d44-14de3b615cb0"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -135,7 +124,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""backward"",
-                    ""id"": ""e35112b8-20e7-4f40-bcec-b35a9aa44f55"",
+                    ""id"": ""65ef93f9-22da-4e33-b09e-1f98275ea3bd"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -145,8 +134,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""3D Vector"",
-                    ""id"": ""91ac2faf-8d0e-4b7a-a770-4af9ed88a91c"",
+                    ""name"": ""RotationKB"",
+                    ""id"": ""b47f9482-63ca-49af-b608-f7d5c93a9f16"",
                     ""path"": ""3DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -157,29 +146,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""04dc615f-b160-41e4-b534-865cbdf68dd5"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""afc31117-fe2f-4afe-8c44-9486a5f59778"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""8c3f863a-908c-4293-ace3-56fdbbffacbf"",
+                    ""id"": ""28eed926-5528-4588-8f2c-1d4062b8ac35"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -189,8 +156,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""71e6745c-67b0-4bbb-97bd-262db3dfc26f"",
+                    ""name"": ""down"",
+                    ""id"": ""7ba14891-1786-4996-b27e-8ad9f9274fb0"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -200,9 +167,31 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""left"",
+                    ""id"": ""53c76591-b8be-4077-b87c-2609b7591d3a"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""fa02d5e8-0a91-43f3-8c5e-d7bf28386237"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""forward"",
-                    ""id"": ""590d1bda-1ed1-4f08-bc02-08ce9a66a1ce"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""id"": ""34e76639-543d-416d-b8bd-55e778c1e888"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
@@ -212,14 +201,25 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""backward"",
-                    ""id"": ""c0b283e5-5308-4b71-ba2d-c70518acacb8"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""id"": ""f56c2501-fa5a-48d4-9303-39c93e7bc625"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Rotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5f0d83a-3fef-4bb2-bc7c-a67e1b2b7860"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ThrustStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -238,11 +238,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     ]
 }");
-        // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Shot = m_Player.FindAction("Shot", throwIfNotFound: true);
-        m_Player_Movment = m_Player.FindAction("Movment", throwIfNotFound: true);
-        m_Player_Rotation = m_Player.FindAction("Rotation", throwIfNotFound: true);
+        // ShipController
+        m_ShipController = asset.FindActionMap("ShipController", throwIfNotFound: true);
+        m_ShipController_Movment = m_ShipController.FindAction("Movment", throwIfNotFound: true);
+        m_ShipController_Rotation = m_ShipController.FindAction("Rotation", throwIfNotFound: true);
+        m_ShipController_ThrustStop = m_ShipController.FindAction("ThrustStop", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,67 +301,67 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Shot;
-    private readonly InputAction m_Player_Movment;
-    private readonly InputAction m_Player_Rotation;
-    public struct PlayerActions
+    // ShipController
+    private readonly InputActionMap m_ShipController;
+    private List<IShipControllerActions> m_ShipControllerActionsCallbackInterfaces = new List<IShipControllerActions>();
+    private readonly InputAction m_ShipController_Movment;
+    private readonly InputAction m_ShipController_Rotation;
+    private readonly InputAction m_ShipController_ThrustStop;
+    public struct ShipControllerActions
     {
         private @PlayerInputActions m_Wrapper;
-        public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Shot => m_Wrapper.m_Player_Shot;
-        public InputAction @Movment => m_Wrapper.m_Player_Movment;
-        public InputAction @Rotation => m_Wrapper.m_Player_Rotation;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public ShipControllerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movment => m_Wrapper.m_ShipController_Movment;
+        public InputAction @Rotation => m_Wrapper.m_ShipController_Rotation;
+        public InputAction @ThrustStop => m_Wrapper.m_ShipController_ThrustStop;
+        public InputActionMap Get() { return m_Wrapper.m_ShipController; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void AddCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(ShipControllerActions set) { return set.Get(); }
+        public void AddCallbacks(IShipControllerActions instance)
         {
-            if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @Shot.started += instance.OnShot;
-            @Shot.performed += instance.OnShot;
-            @Shot.canceled += instance.OnShot;
+            if (instance == null || m_Wrapper.m_ShipControllerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ShipControllerActionsCallbackInterfaces.Add(instance);
             @Movment.started += instance.OnMovment;
             @Movment.performed += instance.OnMovment;
             @Movment.canceled += instance.OnMovment;
             @Rotation.started += instance.OnRotation;
             @Rotation.performed += instance.OnRotation;
             @Rotation.canceled += instance.OnRotation;
+            @ThrustStop.started += instance.OnThrustStop;
+            @ThrustStop.performed += instance.OnThrustStop;
+            @ThrustStop.canceled += instance.OnThrustStop;
         }
 
-        private void UnregisterCallbacks(IPlayerActions instance)
+        private void UnregisterCallbacks(IShipControllerActions instance)
         {
-            @Shot.started -= instance.OnShot;
-            @Shot.performed -= instance.OnShot;
-            @Shot.canceled -= instance.OnShot;
             @Movment.started -= instance.OnMovment;
             @Movment.performed -= instance.OnMovment;
             @Movment.canceled -= instance.OnMovment;
             @Rotation.started -= instance.OnRotation;
             @Rotation.performed -= instance.OnRotation;
             @Rotation.canceled -= instance.OnRotation;
+            @ThrustStop.started -= instance.OnThrustStop;
+            @ThrustStop.performed -= instance.OnThrustStop;
+            @ThrustStop.canceled -= instance.OnThrustStop;
         }
 
-        public void RemoveCallbacks(IPlayerActions instance)
+        public void RemoveCallbacks(IShipControllerActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_ShipControllerActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IPlayerActions instance)
+        public void SetCallbacks(IShipControllerActions instance)
         {
-            foreach (var item in m_Wrapper.m_PlayerActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_ShipControllerActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PlayerActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_ShipControllerActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
+    public ShipControllerActions @ShipController => new ShipControllerActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -371,10 +371,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
-    public interface IPlayerActions
+    public interface IShipControllerActions
     {
-        void OnShot(InputAction.CallbackContext context);
         void OnMovment(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
+        void OnThrustStop(InputAction.CallbackContext context);
     }
 }
